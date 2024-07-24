@@ -10,20 +10,16 @@ st.set_page_config(page_title='Streamlit App', page_icon='📈', layout='wide')
 # df = pd.read_excel('D:\Escritorio\Software\Streamlit\Analisis-de-Archivo.
 # xlsx', sheet_name='Catalogo de Presupuestos')
 
-<<<<<<< HEAD
 st.title("Dashboard")
 df = pd.read_csv('Catalogo_presupuestos.csv')
-=======
 st.title("DASHBOARD TRÁMITES")
 df = pd.read_csv('Catalogo_presupuestos.csv')
 st.caption(r"Se muestra una vista la tabla \"Catálogo de presupuestos\"")
 st.dataframe(df)
 
->>>>>>> a492df73a9742aa91c22bde08c5ba02263a57a3f
 #   st.caption(r"A continuación se muestra la tabla \"Catálogo de presupuestos\"")
 #   st.dataframe(df)
 
-<<<<<<< HEAD
 col1, col2, col3, col4 = st.columns((2, 2, 2, 2), gap='medium')
 with col1:
    col1.metric("Trámites realizados",df.nombrePadron.size)
@@ -33,7 +29,6 @@ with col3:
     col3.metric("Número de usuarios", len(df['user'].dropna().str.upper().unique()))
 with col4:
     col4.metric("Trámite más realizado", tramite_mas_realizado)
-=======
 with st.container(border=True):
     tramite_mas_realizado = df['nombrePadron'].dropna().str.capitalize().value_counts().idxmax()
     col1, col2, col3, col4 = st.columns((2, 2, 2, 2), gap='medium')
@@ -46,7 +41,6 @@ with st.container(border=True):
     with col4:
         col4.metric("Trámite más realizado", tramite_mas_realizado)
 
->>>>>>> a492df73a9742aa91c22bde08c5ba02263a57a3f
 st.divider()
 
 st.header("Total (resultados filtrados)")
